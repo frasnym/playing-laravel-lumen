@@ -2,6 +2,9 @@
 
 1. composer create-project laravel/lumen todoLumen --prefer-dist
 2. cd todoLumen
+3. php artisan make:migration table_todo  --create=todo
+4. php artisan migrate
+5. php -S localhost:8000 -t ./public
 
 # Lumen PHP Framework
 
