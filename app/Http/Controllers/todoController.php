@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-class ExampleController extends Controller
+use Illuminate\Http\Request;
+use App\ModelTodo;
+
+class todoController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -14,5 +17,23 @@ class ExampleController extends Controller
         //
     }
 
-    //
+    public function index(){
+        $data = ModelTodo::all();
+        return response($data);
+    }
+
+    public function show($id){
+        $data = ModelTodo::where('id',$id)->get();
+        return response ($data);
+    }
+    public function store (Request $request){
+        $data = new ModelTodo();
+        $data->activity = $request->input('activity');
+        $data->description = $request->input('description');
+        $data->save();
+
+        return response('Berhasil Tambah Data');
+    }
+
+
 }

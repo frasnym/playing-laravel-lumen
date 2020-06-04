@@ -1,5 +1,9 @@
 # What I Did
 
+```bash
+Lumen (7.1.3) (Laravel Components ^7.0)
+```
+
 1. composer create-project laravel/lumen todoLumen --prefer-dist
 2. cd todoLumen
 3. php artisan make:migration table_todo  --create=todo
