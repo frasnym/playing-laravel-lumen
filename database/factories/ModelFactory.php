@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\User;
+use App\Model\UserAdmin;
 use Faker\Generator as Faker;
 
 /*
@@ -16,9 +16,13 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(UserAdmin::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->email,
+        "id_role_master" => $faker->randomElement($array = array ('1','2','3'), $count = 1),
+        "full_name_adm" => $faker->name,
+        "password_adm" => password_hash('123456', PASSWORD_BCRYPT),
+        "status_adm" => $faker->randomElement($array = array ('0','1'), $count = 1),
+        "mobile_phone_adm" => $faker->e164PhoneNumber,
+        "email_adm" => $faker->email,
     ];
 });
