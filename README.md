@@ -1,6 +1,6 @@
 # What I Did
 
-```bash
+```
 Lumen (7.1.3) (Laravel Components ^7.0)
 ```
 
@@ -30,3 +30,16 @@ php artisan make:seed UsersTableSeeder
 9. php artisan db:seed
 
 ## Err Note
+
+```
+Schema::table // used to alter table
+```
+```
+Schema::create // used to create table
+```
+```
+protected $table = 'user_admin'; // define table name on your model, if you dont want laravel look for "plurar" table (ex: user_admins)
+```
+```
+protected $primaryKey = 'id_user_admin'; // define primary key on your model, if you dont want laravel to return default id name (ex: id)
+```
